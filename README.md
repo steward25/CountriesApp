@@ -1,6 +1,6 @@
 # 🌍 CountriesApp
 
-A Kotlin-based app that helps users discover countries, regions, and capitals. It uses the **REST Countries API** to fetch country data and allows users to search and filter countries by name and region. The app is built with Jetpack Compose and Kotlin Coroutines, providing a clean, responsive UI and smooth user experience.
+A Kotlin-based app that helps users discover countries, regions, and capitals. It uses the **[REST Countries API](https://restcountries.com/)** to fetch country data and allows users to search and filter countries by name and region. The app is built with Jetpack Compose and Kotlin Coroutines, providing a clean, responsive UI and smooth user experience.
 ## 📸 Screenshot
 <p align="center" style="background-color:#f0f0f0;">
     <img src="/screenshots/final_record.gif" alt="CountriesApp" width="200" style="margin-right: 20px;"/>
