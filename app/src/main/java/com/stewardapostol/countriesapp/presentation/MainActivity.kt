@@ -62,6 +62,7 @@ class MainActivity : ComponentActivity() {
         countryViewModel.fetchRegions()
 
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -122,7 +123,12 @@ fun CountryScreen(viewModel: CountryViewModel) {
     }
 
     if (isSubmitSuccessful) {
-        SuccessScreen(name = submittedName, region = submittedRegion, countryValue = countrySelected?.name?.official.toString(), capitalCity = viewModel.capitalCity.collectAsState().value)
+        SuccessScreen(
+            name = submittedName,
+            region = submittedRegion,
+            countryValue = countrySelected?.name?.official.toString(),
+            capitalCity = viewModel.capitalCity.collectAsState().value
+        )
     } else {
         Column(
             modifier = Modifier
@@ -217,11 +223,15 @@ fun CountryScreen(viewModel: CountryViewModel) {
                                     onClick = {
                                         viewModel.onCountrySelected(country)
                                         isDropdownVisible = false
-                                        countrySearchQuery = TextFieldValue(country.name?.common ?: "")
+                                        countrySearchQuery =
+                                            TextFieldValue(country.name?.common ?: "")
                                     },
                                     modifier = Modifier.fillMaxWidth()
                                 ) {
-                                    Text(text = country.name?.common ?: "Unknown Country", color = Color.White)
+                                    Text(
+                                        text = country.name?.common ?: "Unknown Country",
+                                        color = Color.White
+                                    )
                                 }
                             }
                         }
@@ -255,32 +265,36 @@ fun CountryScreen(viewModel: CountryViewModel) {
 
 @Composable
 fun SuccessScreen(name: String, region: String, countryValue: String, capitalCity: String) {
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.SpaceEvenly // Ensures content is centered vertically
+        contentAlignment = Alignment.Center
     ) {
-        // Display greeting
-        Text(
-            text = "Hi $name",
-            style = MaterialTheme.typography.headlineLarge .copy(fontSize = 32.sp), // Large text size
-            color = Color.White
-        )
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(14.dp) // Ensures content is centered vertically
+        ) {
+            // Display greeting
+            Text(
+                text = "Hi $name",
+                style = MaterialTheme.typography.headlineLarge.copy(fontSize = 32.sp), // Large text size
+                color = Color.White
+            )
 
-        // Display region and country value
-        Text(
-            text = "You are from $region, $countryValue",
-            style = MaterialTheme.typography.labelMedium.copy(fontSize = 14.sp), // Slightly smaller text
-            color = Color.White
-        )
+            // Display region and country value
+            Text(
+                text = "You are from $region, $countryValue",
+                style = MaterialTheme.typography.labelMedium.copy(fontSize = 14.sp), // Slightly smaller text
+                color = Color.White
+            )
 
-        // Display capital city
-        Text(
-            text = "Your Capital City is: $capitalCity",
-            style = MaterialTheme.typography.labelSmall.copy(fontSize = 14.sp), // Large text size
-            color = Color.White
-        )
+            // Display capital city
+            Text(
+                text = "Your Capital City is: $capitalCity",
+                style = MaterialTheme.typography.labelSmall.copy(fontSize = 14.sp), // Large text size
+                color = Color.White
+            )
+        }
     }
 }
