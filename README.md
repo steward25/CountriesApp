@@ -9,9 +9,7 @@ A Kotlin-based app that helps users discover countries, regions, and capitals. I
 
 ## 📦 Download APK
 
-You can download the latest version of the app directly from the [**Releases**](https://github.com/your-username/countriesapp/releases) section.
-
-🔗 **[Download APK](https://github.com/your-username/countriesapp/releases/download/v1.0.0/countriesapp.apk)**  
+🔗 **[Download APK](https://github.com/steward25/CountriesApp/tree/main/apk)**  
 📱 Simply install it on your Android device and start exploring countries around the world!
 
 ### 1. Clone the repository
