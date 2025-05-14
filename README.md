@@ -46,6 +46,6 @@ cd countriesapp
 - **Kotlin**: Programming language.
 - **Jetpack Compose**: For building the UI.
 - **Room**: For local data storage.
-- **Ktor**: For making HTTP requests to the exchange rate API.
+- **Ktor**: For making HTTP requests to the get all countries information.
 - **Coroutines**: For managing background tasks.
 - **MVVM (Model-View-ViewModel)**: For separation of concerns.
